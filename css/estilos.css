@@ -1,0 +1,147 @@
+body{
+  padding-top: 5%;
+  background-image: url("../images/costa-dorada.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+h1{
+  padding-bottom: 10%;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.5em black !important;
+}
+
+.buscador{
+  text-align: center;
+  padding-top: 150px;
+}
+
+button{
+  text-transform: uppercase;
+  /* margin-left: -25px; */
+  font-weight: bold;
+  background-color: rgb(122, 177, 96)!important;
+  border: 2px solid white!important;
+  border-radius: 0.8rem!important;
+  padding: .75rem .75rem!important;
+  color: white;
+  width: auto;
+  margin: 0.1em;
+}
+
+button:hover{
+  border: 3px solid white!important;
+  box-shadow: 0.1em 0.1em 0.5em black !important;
+}
+
+/* button:visited{
+  border: 3px solid rgb(122, 177, 96) !important;
+  box-shadow: 0.1em 0.1em 0.5em black !important;
+  color:  rgb(122, 177, 96)!important;
+  background-color: white!important;
+} */
+
+.inputEscogeViaje{
+  border: 2px solid white!important;
+  width: 15rem;
+  display: inline-block;
+  margin-right: -25px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .75rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 1.5rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.desplegableOculto{
+  width: 400px;
+  height: 400px;
+  display: inline-block;
+  background-color: white;
+  text-align: center;
+  border-radius: 0.5rem;
+  visibility:hidden;
+}
+
+.desplegableVisible{
+  width: 600px;
+  height: 300px;
+  display: inline-block;
+  background-color: white;
+  text-align: center;
+  border-radius: 0.5rem;
+  visibility: visible;
+  color: rgb(122, 177, 96);
+  padding: 5%;
+}
+
+#desplegable ul{
+    text-align: center;
+    display: inline-block;
+    margin-left: -40px;
+}
+
+#desplegable ul li{
+  list-style: none;
+  text-align: center;
+  padding: 20px;
+  display: inline-block;
+}
+
+.destinos{
+  padding-bottom: 20px;
+  text-shadow: 0 0 2px #e1e1e1;
+}
+
+#desplegable ul li a{
+  color: rgb(122, 177, 96);
+}
+
+.boton{
+  float: none;
+  text-align: center;
+  display: inline-block;
+}
+
+
+
+/* Aqui va lo de las push notificaciones */
+
+
+main, header > h1 {
+  padding: 0 16px;
+  max-width: 760px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+main {
+  margin: 24px auto;
+  box-sizing: border-box;
+}
+
+pre {
+  white-space: pre-wrap;
+  background-color: #EEEEEE;
+  padding: 16px;
+}
+
+pre code {
+  word-break: break-word;
+}
+
+.is-invisible {
+  opacity: 0;
+}
+
+.subscription-details {
+  transition: opacity 1s;
+}

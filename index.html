@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Prueba de PWA</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Color de la App -->
+  <meta name="theme-color" content="#7ab160">
+
+  <!-- Optimizacion para Movil -->
+  <meta name="MovilOptimized" content="width">
+  <meta name="HandheldFriendly" content="true">
+
+  <!-- Meta etiquetas PWA para Apple -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="apple-touch-startup-image" href="images/logo.png">
+
+  <!-- Configuracion General de la PWA -->
+  <link rel="manifest" href="./manifest.json">
+
+
+</head>
+<body>
+  <div class="container">
+    <div class="row buscador">
+
+      <div id="cajaDeBusqueda" class="caja text-white col">
+          <h1 class="mb-3">Bienvenido a la Costa Dorada y las Tierras del Ebro</h1>
+          <!-- <h1 class="mb-3">Escoge tu viaje</h1> -->
+          
+            <!-- <input class="inputEscogeViaje" id="inputEscogeViaje" type="text" name="" value="" placeholder="¿Dónde vamos?"> -->
+            <p><button type="button" id="geo" class="btn boton" name="button">Geolocalizacion</button></p>
+
+            <p><button type="button" id="cam" class="btn boton" name="button">Cámara</button></p>
+
+          <p><button type="button" id="ra" class="btn boton" name="button">Realidad Aumentada</button></p>
+          
+          <div class="desplegableOculto" id="desplegable">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1525535.7574714832!2d0.6248581894208959!3d41.68680140005485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a45bdc8530f5f3%3A0x100fae021a3c850!2zQ2F0YWx1w7Fh!5e0!3m2!1ses!2ses!4v1540512595555" width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+
+            <!-- <div class="">
+              <h3 class="destinos">Destinos Top</h1>
+              <ul>
+                <li><a href="#">Cambrils</a></li>
+                <li><a href="#">Salou</a></li>
+                <li><a href="#">Tarragona</a></li>
+              </ul>
+            </div> -->
+          </div>
+          
+          <!-- Aqui va lo de las notificaciones push -->
+
+                <button disabled class="fijo button js-push-btn mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                  Habilitar las Notificaciones Push
+                </button>
+              <section class="subscription-details js-subscription-details is-invisible">
+                <!-- <p>Once you've subscribed your user, you'd send their subscription to your
+                server to store in a database so that when you want to send a message
+                you can lookup the subscription and send a message to it.</p> -->
+                <!-- <p style="color: white;">To simplify things for this code lab copy the following details
+                into the <a href="https://web-push-codelab.glitch.me//">Push Companion
+                Site</a> and it'll send a push message for you, using the application
+                server keys on the site - so make sure they match.</p> -->
+                <p style="color: white; background-color: #7AB160;">Para hacer la prueba copia el siguiente código JSON
+                en <a href="https://web-push-codelab.glitch.me//">Push Companion
+                Site</a> y se te enviará una notificacion push usando el servidor
+                de claves de este sitio.</p>
+                <pre><code class="js-subscription-json"></code></pre>
+              </section>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js">  </script>
+  <script type="text/javascript" src="js/popper.min.js">  </script>
+  <script type="text/javascript" src="js/bootstrap.min.js">  </script>
+  <script src="js/main.js">  </script>
+</body>
+</html>
