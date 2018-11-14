@@ -31,13 +31,16 @@
 
 // var botonGeo = document.getElementById('geo');
 // botonGeo.addEventListener("click", crearDesplegable);
+  
+var lat = null;
+var lng = null;
 
 // Referencias de jQuery
 var googleMapKey = 'AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY';
 
 //Crear mapa en el modal
 function mostrarMapa (lat, lng){
-  $('.modal-mapa').remove();
+  //$('.modal-mapa').remove();
 
   // var botonGeo = document.getElementById('geo');
   var modalMapa = document.getElementById('modal-mapa');
@@ -47,7 +50,9 @@ function mostrarMapa (lat, lng){
   frame.width = "100%";
   frame.height = "250";
   frame.frameBorder = "0";
-  frame.src = "'https://www.google.com/maps/embed/v1/view?key=${ googleMapKey }&center=${ lat },${ lng }&zoom=17' allowfullscreen";
+  frame.src = "https://www.google.com/maps/embed/v1/view?key=AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY&center=-33.8569,151.2152&zoom=18";
+  // https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=-33.8569,151.2152&zoom=18&maptype=satellite
+  // frame.href = "'https://www.google.com/maps/embed/v1/view?key=AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY&center=${ lat },${ lng }&zoom=17' allowfullscreen";
 }
 
 
