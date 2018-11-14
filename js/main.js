@@ -51,6 +51,7 @@ function mostrarMapa (lat, lng){
 }
 
 
+
 //Recursos nativos
 //Obtener la geolocalizacion
 
