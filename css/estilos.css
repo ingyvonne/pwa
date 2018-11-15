@@ -1,5 +1,5 @@
 body{
-  padding-top: 5%;
+  padding-top: 3%;
   background-image: url("../images/costa-dorada.jpg");
   background-repeat: no-repeat;
   background-size: auto;
@@ -13,10 +13,10 @@ h1{
 
 .buscador{
   text-align: center;
-  padding-top: 150px;
+  padding-top: 100px !important;
 }
 
-button{
+button#geo.btn.boton, button#cam.btn.boton, button#ra.btn.boton{
   text-transform: uppercase;
   /* margin-left: -25px; */
   font-weight: bold;
@@ -29,7 +29,7 @@ button{
   margin: 0.1em;
 }
 
-button:hover{
+button#geo.btn.boton:hover{
   border: 3px solid white!important;
   box-shadow: 0.1em 0.1em 0.5em black !important;
 }
@@ -60,6 +60,17 @@ button:hover{
   line-height: 1.5;
   border-radius: 1.5rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.map{
+  color: black;
+  width: 100%;
+  height: 250px;
+
+}
+
+div.map{
+  margin: 15px;
 }
 
 .desplegableOculto{

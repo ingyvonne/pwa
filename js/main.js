@@ -32,63 +32,64 @@
 // var botonGeo = document.getElementById('geo');
 // botonGeo.addEventListener("click", crearDesplegable);
   
-var lat = null;
-var lng = null;
+// Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
 
-// Referencias de jQuery
-var googleMapKey = 'AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY';
+      $("#geo").on( "click", function() {	 
+        $('#map').toggle();
+         });
+      
+      function initMap() {
+        
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 17
+        });
+        infoWindow = new google.maps.InfoWindow;
 
-//Crear mapa en el modal
-function mostrarMapa (lat, lng){
-  //$('.modal-mapa').remove();
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
 
-  // var botonGeo = document.getElementById('geo');
-  var modalMapa = document.getElementById('modal-mapa');
-  // botonGeo.addEventListener("click",crearModalMapa);
-  var frame = document.createElement('iframe');
-  modalMapa.appendChild(frame);
-  frame.width = "100%";
-  frame.height = "250";
-  frame.frameBorder = "0";
-  frame.src = "https://www.google.com/maps/embed/v1/view?key=AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY&center=-33.8569,151.2152&zoom=18";
-  // https://www.google.com/maps/embed/v1/view?key=YOUR_API_KEY&center=-33.8569,151.2152&zoom=18&maptype=satellite
-  // frame.href = "'https://www.google.com/maps/embed/v1/view?key=AIzaSyD4YFaT5DvwhhhqMpDP2pBInoG8BTzA9JY&center=${ lat },${ lng }&zoom=17' allowfullscreen";
-}
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Estás aquí');
+            infoWindow.open(map);
+            map.setCenter(pos);
+            $('#map').hide();
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
 
-
-
-//Recursos nativos
-//Obtener la geolocalizacion
-
-$('#geo').on('click', () =>{
-
-  // var divDesplegable = document.createElement('div');
-  // modalMapa.append(divDesplegable);
-  // divDesplegable.setAttribute("class","desplegableVisible");
-
-if (navigator.geolocation) {
-  console.log('La Geolocalizacion esta soportada en este navegador');
-  navigator.geolocation.getCurrentPosition( pos => {
-    alert('Para completar la accion esta aplicacion necesita acceder a su ubicación');
-    console.log(pos);
-    mostrarMapa(pos.coords.latitude, pos.coords.longitude);
-    
-    lat = pos.coords.latitude;
-    lng = pos.coords.longitude;
-  });
-  
-}
-else{
-  console.log('La Geolocalizacion no esta soportada en este navegador');
-
-};
-
-});
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
 
 
-// $("#geo").click(function() { 
-//   window.open('http://www.google.com', '_self');
-// });
+
+
+
+
+
+
+
+
+
 
 
 //Service Worker
