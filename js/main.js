@@ -39,6 +39,7 @@
       var map, infoWindow;
 
       $("#geo").on( "click", function() {	 
+        
         $('#map').toggle();
          });
       
@@ -57,12 +58,12 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
-
+            $('#map').hide();
             infoWindow.setPosition(pos);
             infoWindow.setContent('Estás aquí');
             infoWindow.open(map);
             map.setCenter(pos);
-            $('#map').hide();
+            
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
